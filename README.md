@@ -7,14 +7,3 @@
 -
 Check out all my training files in this repo.
 Enjoy Learning!
-
-`````bash
-
-- SQL (4 Hours)             : COMPLETED ✅ 
-- Python (12 Hours)         : COMPLETED ✅
-- NumPy (1 Hours)           : COMPLETED ✅
-- Pandas (1 Hours)          : COMPLETED ✅
-- MatPlotlib (1 Hours)      : COMPLETED ✅
-- C++ Programming (8 Hours) : COMPLETED ✅
-
-`````
