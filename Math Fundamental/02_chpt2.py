@@ -10,6 +10,8 @@
 
 # Fraction = Up(Cardinal) / Down(Ordinal)
 
+# ==============================================
+
 """ 1. JOINT """
 # AND = Multiplying
 
@@ -17,6 +19,8 @@
 # P(heads) = 1 / 2 (coin)
 # P(6) = 1 / 6 (die)
 # P(heads AND 6) = 1 / 2 * 1 / 6 => 1 / 12, .08333
+
+# ==============================================
 
 """ 2. UNION """
 # OR = Plus add them together
@@ -40,6 +44,8 @@
 # P(6) = 1 / 6
 # P(heads or 6) = (1 / 2 + 1 / 6) - (1 / 2 * 1 / 6) 
 # = (4 / 6) - (1 / 12) = Below must be equal 7 / 12 = .58333
+
+# ==============================================
 
 """ 3. Conditional Probability + Bayes' Theorem """
 
@@ -69,6 +75,8 @@ print(p_cancer_given_coffee_drinker) # 0.0065 ...
 
 # Answer: The prob someone has cancer given they are a coffee drinker is only 0.65%
 
+# ==============================================
+
 """ 4. Joint and Union Conditional Probabilities """
 
 # Find the prob somebody is a coffee drinker AND they have cancer.
@@ -81,6 +89,8 @@ print(p_cancer_given_coffee_drinker) # 0.0065 ...
 
 # Union prob if A or B occurring but A may affect the prob of B
 # P(A OR B) = P(A) + P(B) - P(A|B) * P(B)
+
+# ==============================================
 
 """ 5. Binomial and distributions """
 
@@ -100,6 +110,8 @@ for k in range(n + 1):
 # n = the number of trials
 # p = the probability of success for each trial
 # k = the number of sucesses we wanna look up the probability for
+
+# ==============================================
 
 """ 6. Beta Distribution """
 
