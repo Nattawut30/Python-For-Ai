@@ -3,6 +3,7 @@ Chapter 01: Basic Math and Calculus Review
 """
 
 """ 1. Order of Operations """
+# 1.1: 
 # PEMDAS = parentheses, exponents, multiplication, division, addition, subtraction
 print(2 + 3 * 4)  # Output: 14
 print((2 + 3) * 4)  # Output: 20
@@ -22,6 +23,8 @@ print(my_value)
 # ========================================
 
 """ 2. Variables """
+# 1.2:
+
 x = int(input("Please input a number\n: "))
 product = 3 * x
 print(product)
@@ -40,6 +43,8 @@ print(x_1 + x_2 + x_3)
 # ========================================
 
 """ 3. Functions """
+# 1.3: 
+
 # y = 2x + 1
 x = int(input("Please input x values\n: "))
 y = 2 * x + 1
@@ -76,6 +81,8 @@ plot3d(f)
 # ========================================
 
 """ 4. Summation """
+# 1.4:
+
 # Expressed as a sigma Σ and adds elements together.
 # ∑i = 1 to 5, 2i = 2(1) + 2(2) + 2(3) + 2(4) + 2(5) = 30
 
@@ -121,6 +128,7 @@ print(up_to_5.doit()) # 30
 
 # x^0 = 1
 
+# 1.5:
 from sympy import *
 
 x = symbols("x")
@@ -146,6 +154,7 @@ print(expr) # x**(-3)
 # 2^x = 8, we know the answer is x = 3
 # a^x = b, loga^b = x
 
+# 1.6:
 from math import log
 # 2 raised to that power gives me 8?
 
@@ -165,6 +174,8 @@ print(x) # 3.0
 # t = time span (number of years)
 # n = periods (number of months in each year)
 
+# 1.6:
+
 from math import exp
 
 p = 100 # start investing
@@ -182,9 +193,9 @@ print(a) # total balance after 2 years = 148.691...
 # Notics? we are gaining smaller and smaller
 # That's why we need to use e = 2.71828
 
+# 1.7:
 # A = p * e^r * t
 # we use e to get the closest to our value when compounding
-
 from math import exp
 
 p = 100 # principal, starting amount
@@ -202,6 +213,7 @@ print(a) # 149.182469...
 # log() function is e.
 # loge^10 = ln(10)
 
+# 1.8:
 from math import log
 
 # e raised to what power gives us 10?
@@ -215,8 +227,8 @@ print(x) # 2.30258...
 # lim x -> ∞, 1 / x = 0
 # as x approaches infinity, the function 1/x approaches 0 (but never reaches 0)
 
+# 1.9: 
 # calculate limits, infinity = oo in sympy
-
 from sympy import *
 
 x = symbols("x")
@@ -225,9 +237,9 @@ result = limit(f, x, oo)
 
 print(result) # 0
 
+# 1.10:
 # Just like Euler's number e this way too...
 # lim x -> ∞, (1 + 1 / n)^n = e = 2.178281...
-
 from sympy import *
 
 n = symbols("n")
@@ -252,6 +264,7 @@ print(result.evalf()) # 2.71828182845905
 # m = 4.41 - 4.0 / 2.1 - 2.0
 # m = 4.1
 
+# 1.11:
 # Calculate derivative
 def derivative_x(f, x, step_size):
     m = (f(x + step_size) - f(x)) / ((x + step_size) - x)
@@ -263,6 +276,7 @@ def my_function(x):
 slope_at_2 = derivative_x(my_function, 2, .00001)
 print(slope_at_2) # 4.000010000000827
 
+# 1.12:
 # d / dx indicates a derivative with respect to x
 # d / dx * f(x) = d / dx * x^2 = 2x
 # d / dx * f(2) = 2(2) = 4
@@ -278,6 +292,7 @@ f = x**2
 dx_f = diff(f)
 print(dx_f) # 2*x
 
+# 1.13:
 # try diff() to calc. the derivative function
 def f(x):
     return x**2
@@ -294,6 +309,7 @@ print(slope_at_2) # 4
 # Multiple input variables
 # x and y variable each get their own derivatives
 
+# 1.14:
 # 2x^3 > bring 3 * 2 and ^-1.
 # = (2x * 3)^3-1 = 6x^2
 # Slap the power number down and -1, then * with the number infront of variables
@@ -320,6 +336,7 @@ plot3d(f)
 # If x,y = 1,2
 # the slope x is 6(1)^2 = 6, the slope y is 9(2)^2 = 36 
 
+# 1.15:
 # Apply Limits to Calc. Derivative
 # lim s -> 0, (x + s)^2 - x^2 / (x + s) - x
 # lim s -> 0, (2 + s)^2 - 2^2 / (2 + s) - 2 = 4
@@ -344,6 +361,7 @@ result = limit(slope_2, s, 0)
 
 print(result) # 4
 
+# 1.16:
 # Not assign a specific value to x
 from sympy import *
 
@@ -371,6 +389,7 @@ print(result) # 2x
 # Power Rule = Slap power number in front and minus ^-1
 # Constant Rule = empty diff without varialbes = always 0
 
+# 1.17: 
 # y = x^2 + 1
 # z = y^3 - 2
 # we can use the 'y' in 'z'
@@ -417,6 +436,7 @@ print(dz_dx_no_chain)
 # Find the area under the curve for a given range.
 # Hacks: looking for a geometry and calc. it
 
+# 1.18:
 # f(x) = x^2 + 1, Graph: U, find the area under the curve on x
 # a = min
 # b = max
@@ -437,6 +457,7 @@ def my_function(x):
 area = approximate_integral(a=0, b=1, n=5, f=my_function)
 print(area) # 1.33
 
+# 1.19:
 # Looks like we got smaller 1.33... so maybe the answer is 4/3
 # prove it!
 from sympy import *
@@ -449,6 +470,7 @@ f = x**2 + 1
 area = integrate(f, (x, 0, 1))
 print(area) # if 4/3 then correct!
 
+# 1.20:
 # Apply Limits with Integrals
 from sympy import *
 

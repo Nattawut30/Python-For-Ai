@@ -60,6 +60,7 @@
 # P(Coffee|Cancer) = .85
 # Few coffee drinkers have cancer, but many cancer patients drink coffee.
 
+# 2.1:
 # Flip conditional prob (Bayes's Theorem)
 # P(A|B) = P(B|A) * P(A) / P(ฺB)
 # P(Cancer|Coffee) = P(Coffee|Cancer) * P(Cancer) / P(Coffee)
@@ -97,6 +98,7 @@ print(p_cancer_given_coffee_drinker) # 0.0065 ...
 # The only way we will know for sure is to run more tests
 # binomial distribution = how likely 'k' successes can happen out of 'n' trials given 'p' probability
 
+# 2.2: 
 # SciPy for the binomial distribution
 from scipy.stats import binom
 
@@ -124,6 +126,7 @@ for k in range(n + 1):
 
 # CDF = cumulative density function
 
+# 2.3:
 # Beta distribution using SciPy - Calc. the area up to 90%
 from scipy.stats import beta
 
@@ -140,6 +143,7 @@ print(p) # 77.48% chance the underlying probability of success is 90% or less.
 
 # ** CDF calculates area only to the left of our boundary, not the right!
 
+# 2.4:
 # Substracting to get a right area in a beta distribution
 from scipy.stats import beta
 
@@ -153,6 +157,7 @@ print(p)
 # out of 8/10 successful tests, there's only 22.5% chance the underlying success rate is 90% or greater
 # but there's 77.5% chance it is less than 90%
 
+# 2.5:
 # a beta distribtution with more trials - Granted more test up to 30
 from scipy.stats import beta
 
@@ -165,6 +170,7 @@ print(p)
 # Good idea to walk away now
 # unless you wanna bet agaist this 13.16% chance like this!
 
+# 2.6:
 # middle area beta distributions using SciPy
 # what % chance between 80% - 90% success rate?
 from scipy.stats import beta
