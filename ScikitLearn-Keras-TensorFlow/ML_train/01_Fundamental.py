@@ -86,3 +86,84 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
+# Download and prepare the data
+data_root = "https://github.com/ageron/data/raw/main/"
+lifesat = pd.read_csv(data_root + "lifesat/lifesat.csv")
+X = lifesat[["GDP per capita (USD)"]].values
+y = lifesat[["Life satisfaction"]].values
+
+# Visualize the data
+lifesat.plot(kind='scatter', grid=True,
+             x="GDP per capita (USD)", y="Life satisfaction")
+plt.axis([23_500, 62_500, 4, 9])
+plt.show()
+
+# Select a linear model
+model = LinearRegression()
+
+# Train the model
+model.fit(X, y)
+
+# Make a prediction for Cyprus
+X_new = [[37_655.2]] # Cyprus' GDP per capita in 2020
+print(model.predict(X_new)) # [[6.30165767]]
+
+# ==============================
+
+# 1.2: Training and running a k-nearest neightbors regression
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from sklearn.neighbors import KNeighborsRegressor
+
+# Download and prepare the data
+data_root = "https://github.com/ageron/data/raw/main/"
+lifesat = pd.read_csv(data_root + "lifesat/lifesat.csv")
+X = lifesat[["GDP per capita (USD)"]].values
+y = lifesat[["Life satisfaction"]].values
+
+# Visualize the data
+lifesat.plot(kind='scatter', grid=True,
+             x="GDP per capita (USD)", y="Life satisfaction")
+plt.axis([23_500, 62_500, 4, 9])
+plt.show()
+
+# Select a linear model
+model = KNeighborsRegressor(n_neighbors=3)
+
+# Train the model
+model.fit(X, y)
+
+# Make a prediction for Cyprus
+X_new = [[37_655.2]] # Cyprus' GDP per capita in 2020
+print(model.predict(X_new)) # [[6.3333333]]
+
+# Studied the data
+# Selected a model
+# Trained it on the training data
+# Applied the model to make prediction on new cases
+
+""" 3. Main Challenges of ML """
+
+# Insufficient Quantiity of Training Data
+# - It takes a lot of data for most machine learning algorithm to work properly
+# - Data matters more than algorithms, but don't abandon algorithms yet
+
+# Non-representative training data
+# - To generalize well, the training data must be representative of the new cases you want to generalize to
+
+# Poor Quality Data
+# - Data is full of errors, outliers and noise = make it harder for the system to detect the underlying pattern
+# - You will spend 80% of your time clean traning data
+# - Decide it on you want to ignore the attibutes altogether or not. Keep it or remove it or combine it
+
+# Irrelevant Features
+# - Garbage in, Garbage out = the training data contains enough relevant features = good
+# - Feature Selection: selecting the most useful features
+# - Feature Extraction: combining existing features to produce a more useful one
+# - New Features: gathering new data
+
+# Overfitting the Training Data
+# - the model perform well on the training data, but it does not generalize well
+# - happends when the model is too complex relative to the amount and noisiness of the training data
+# - Solutions: Simplify the model, Gather more data, Reduce the noise 
