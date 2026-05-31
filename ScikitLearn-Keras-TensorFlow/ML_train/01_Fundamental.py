@@ -167,3 +167,38 @@ print(model.predict(X_new)) # [[6.3333333]]
 # - the model perform well on the training data, but it does not generalize well
 # - happends when the model is too complex relative to the amount and noisiness of the training data
 # - Solutions: Simplify the model, Gather more data, Reduce the noise 
+
+# Regularization: Constraining a model to make it simpler and reduce the risk of overfitting
+# Hyperparameter: A parameter of a learning algorithms. Tuning hyperparameters is an important part of ML
+
+# Underfitting the Training Data
+# - Opposite of overfitting: it occur when the model is simple to learn the underlying structure of the data
+# - Solutions: Select a more powerful model, Feed better features to the algorithm, Reduce the constraints on the model
+
+""" 4. Testing and Validating """
+# Try it out one new case
+# - Deployed in a production and monitoring
+# - To split the data into 2 sets: the training set and the test set.
+
+# Evaluating the model on the test set, get an estimate of the error.
+# This value tells you how well the model will perform on instances it has never seen before
+
+# Hyperparameter Tuning and Model Selection
+# - To train both and compare how well they generalize using the test set
+# - You train multiple models with various hyperparameters on the reduced training set
+# - You select the model that perform best on the validation set
+# - You evaluate this final model on the test set to get an estimate of the generalization error
+
+# It is not ideal to compare candidate models trained on a much smaller training set
+# Solutions: To perform repeated cross-validation or using small validation sets
+
+# Data Mismatching
+# - Both validation set and the test set must be as representative as possible of the data you expect to use in production
+# - Making sure that no duplicates or near-duplicates end up in both sets
+# - If it performs well on the train-dev set, then you can evaluate the model on the dev set.
+# - If it performs bad, then the problem must be coming from the data mismatch
+
+# Once you have a model that performs well on both the train-dev set and the dev set,
+# You can evaluate it one last time on the test set to know how well it is likely to perfrom in productions.
+
+# No Free Lunch (NFL): If you make absolutely no assumption about the data, then there's no reason to prefer one model over any other!
