@@ -58,4 +58,58 @@
 
 """ 3. Check the Assumptions """
 
+# Verify the assumptions that have been made so far;
+# This can help you catch a serious issues early on
 
+# verifing the objective and expectations clearly before doing the work
+
+# Get the data and work on it
+
+""" 4. Get the Data """
+
+# Jupyter Notebook = interactive documents containing text, images, and executable code snippets (Python)
+# Run it on Google Colab or Extension on IDE
+# .ipynb
+
+# A jupyter notebook is composed of a list of cells. Each cell contains either executable code or text
+# press shift + enter to run
+# the code runs on the runtime, not on your machine
+
+# if you runs it on IDE likes VScode with the jupyter extension, the runtimes will be in "kernel"
+# Don't forget to save a copy of your code
+
+# You can mount the google drive on the runtime allowing the notebook to read and write files directly to Google Drive as if it were local directory
+
+""" 5. The power and Danger of Interactivity """
+
+# Jupyter Notebook are interactive
+# It's very easy to run cells in the wrong order, or to forget to run a cell
+
+# If you encounter the weird error, trt restarting the runtime
+# Or adjust the kernel
+
+""" 6. Download The Data """
+# You will need a single compressed file which contains a comma-separated-values or "CSV"
+
+# 2.1: Fetching and loading the data
+from pathlib import Path
+import pandas as pd
+import tarfile
+import urllib.request
+
+def load_housing_data():
+    tarball_path = Path("datasets/housing.tgz")
+    if not tarball_path.is_file():
+        Path("datasets").mkdir(parents=True, exist_ok=True)
+        url = "https://github.com/ageron/data/raw/main/housing.tgz"
+        urllib.request.urlretrieve(url, tarball_path)
+        with tarfile.open(tarball_path) as housing_tarball:
+            housing_tarball.extractall(path="datasets")
+    return pd.read_csv(Path("datasets/housing/housing.csv"))
+
+housing = load_housing_data
+
+""" 7. Quick look at the data """
+
+# Use "housing.head()"" function = Top five rows in the datasets
+# Use "housing.info()" function = get a quick description of the data in particular total number of rows
