@@ -113,3 +113,25 @@ housing = load_housing_data
 
 # Use "housing.head()"" function = Top five rows in the datasets
 # Use "housing.info()" function = get a quick description of the data in particular total number of rows
+
+# >>> housing["ocean_proximity"].value_counts()
+
+# Use "housing.describe() function = Shows a summary of the numerical attributes"
+# The count, mean, min, max rows are self explanatory. The null values are ignored
+# The std rows show "standard deviation" measures how dispersed the values are
+# 25%, 50%, 75%, rows show the "percentile"
+
+# hist() plot a histogram for each numerical attribute
+import matplotlib.pyplot as plt
+
+housing.hist(bins=50, figsize=(12, 8))
+plt.show()
+
+# Working with preprocessed attributes is common in ML
+# The latter may be a serious problem since it is your target attribute (your labels)
+# 1. collect proper labels for the deistricts whose labels were capped
+# 2. Remove those districs from the training set
+
+# Many histograms are skewed right, they extend much farther to the right of the median than to the left. make it hard for ML to see patterns.
+
+# *** Create a test set, put it aside, and never look at it. ***
