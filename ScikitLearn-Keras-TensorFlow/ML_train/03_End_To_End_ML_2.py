@@ -62,5 +62,30 @@ def split_data_with_id_hash(data, test_ratio, id_column):
 # if your dataset is large enough = fine
 # if not, you run the risk of introducing a significant sampling bias
 
+# "Stratified Samping" = make an assumptions for the data survey female 51.1% and male 48.9%: 511 females and 489 males
+# The population is divided into homogenous subgroups called "strata"
 
+# Use pd.cut() function to create the category attribute with 5 categories
+# Scikit-Learn provides a number of splitter classes in the sklearn.model_selection package
 
+# The split() method yields the training and test indices not the data itself
+from sklearn.model_selection import StratifiedShuffleSplit
+
+splitter = StratifiedShuffleSplit(n_splits=10, test_size=0.2, random_state=42)
+strat_splits = []
+
+# First split
+strat_train_set, strat_test_set = strat_splits[0]
+
+# train_test_split() with the stratify arfguments works too!
+
+# Looking at proportions in the test set:
+strat_test_set["income_cat"].value_counts() / len(strat_test_set)
+
+# drop income_cat column and reverting the data back to the original state:
+for set_ in (strat_train_set, strat_train_set):
+    set_.drop("income_cat", axis=1, inplace=True)
+
+# Test set generation is an often neglected but critical part of a machine learning
+
+""" 2. Explore and Visualize the Data to Gain Insights """
